@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+   
+    i18n_domain="collective.patchlinguaploneissue273">
+
+  <include package="collective.monkeypatcher" />
+  <monkey:patch
+        description="This works around issue http://plone.org/products/linguaplone/issues/273"
+        class="Products.LinguaPlone.I18NBaseObject.I18NBaseObject"
+        original="getTranslation"
+        replacement=".patch.getTranslation"
+        
+        />
+  
+</configure>
